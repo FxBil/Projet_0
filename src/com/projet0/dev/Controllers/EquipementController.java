@@ -3,7 +3,7 @@ package com.projet0.dev.Controllers;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RaceController implements ActionListener {
+public class EquipementController implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
