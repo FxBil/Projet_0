@@ -8,7 +8,7 @@ public class PersonnageController extends IndividuController implements ActionLi
 	
     HashMap<Integer, String> mapInventaire = new HashMap<Integer, String>();
     HashMap<Integer, String> mapStuff= new HashMap<Integer, String>();
-    //test
+    ///test
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
