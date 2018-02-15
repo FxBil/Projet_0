@@ -7,6 +7,14 @@ public class CombatController extends EvenementController implements ActionListe
 	
 	int quiJoue;
 	
+	public int getQuiJoue(){  
+	    return quiJoue;
+	 }
+	
+	 public void setQuiJoue(int aQuiJoue){
+	    quiJoue = aQuiJoue;
+	 }
+
 	
 	static public int verificationEtat(PersonnageController perso){
         
