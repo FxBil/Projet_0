@@ -120,7 +120,7 @@ public class ObjetController implements ActionListener {
 	 }
 	 
 	 public void setImage(Image bImage){
-		 image = bImage;
+		 image = bImage; //
 	 }
 	 
 
