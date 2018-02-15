@@ -7,7 +7,14 @@ public class EquipementController implements ActionListener {
 	
 	boolean estEquipe;
 	
+	public boolean getEstEquipe(){  
+	    return estEquipe;
+	 }
 	
+	 public void setEstEquipe(boolean aEstEquipe){
+	    estEquipe = aEstEquipe;
+	 }
+
 	static public boolean verification(ObjetController objet){
         boolean contain = false;
         int type=set(objet.type);
