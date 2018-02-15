@@ -12,29 +12,41 @@ public abstract class IndividuController implements ActionListener {
 	
 	public int attaque(PersonnageController unPersonnage, PNJController unPnj, CombatController quiJoue) {
 		
-		if (quiJoue%2==0) {
+		if (CombatController.quiJoue%2==0) {
 			
 			PersonnageController attaquant = unPersonnage;
 			PNJController défenseur = unPnj;
 			
+			int atk = (EvenementController.lancerDes()+(attaquant.force+attaquant.agilite+attaquant.intelligence));
+			int def = (EvenementController.lancerDes()+(défenseur.force+défenseur.agilite+défenseur.intelligence));
+			
+			int dgt = atk-def;
+			
+			if (dgt<1) {
+				dgt=0;
+			}
+			
+			int constitu = défenseur.constitution-dgt;
+			return défenseur.constitution;
 		}
 		else {
 			
 			PNJController attaquant = unPnj;
 			PersonnageController défenseur = unPersonnage;
 			
+			int atk = (EvenementController.lancerDes()+(attaquant.force+attaquant.agilite+attaquant.intelligence));
+			int def = (EvenementController.lancerDes()+(défenseur.force+défenseur.agilite+défenseur.intelligence));
+			
+			int dgt = atk-def;
+			
+			if (dgt<1) {
+				dgt=0;
+			}
+			
+			int constitu = défenseur.constitution-dgt;
+			return défenseur.constitution;
+			
 		}
 		
-		int atk = (lancerDes()+(attaquant.force+attaquant.agi+attaquant.intelligence));
-		int def = (lancerDes()+(défenseur.force+défenseur.agi+défenseur.intelligence));
-		int dgt = atk-def;
-		
-		if (dgt<1) {
-			dgt=0;
-		}
-		
-		int constitu = défenseur.constitution-dgt;
-		return défenseur.constitution;
-
 	}
 }
