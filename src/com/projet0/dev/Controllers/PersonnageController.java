@@ -26,8 +26,11 @@ public class PersonnageController extends IndividuController implements ActionLi
     		key_objet = ObjetController.getId_objet();
         mapInventaire.remove(key_objet);
         }
-
-
+    
+    static public int utiliserObjet(int key_objet) {
+  		key_objet = ObjetController.getId_objet();
+      mapInventaire.remove(key_objet);
+      }
 
 
 	
