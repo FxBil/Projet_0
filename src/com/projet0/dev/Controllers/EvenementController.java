@@ -13,6 +13,8 @@ public class EvenementController implements ActionListener {
     HashMap<Integer, String> mapChoix = new HashMap<Integer, String>();
     
     
+    
+    
     static public int lancerDes(){
         int nbrand = 0;
         int etat = IndividuController.getEtat();

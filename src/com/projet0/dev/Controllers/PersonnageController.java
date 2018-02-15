@@ -9,6 +9,20 @@ public class PersonnageController extends IndividuController implements ActionLi
     HashMap<Integer, String> mapInventaire = new HashMap<Integer, String>();
     HashMap<Integer, String> mapStuff= new HashMap<Integer, String>();
     ///test
+    
+    
+    static public boolean fuite(int id_perso,int id_pnj) {
+        id_perso = PersonnageController.getId_perso();
+        id_pnj = PNJController.getId_png();
+        
+        if (PersonnageController.getAgi_perso() + ObjetEvenemmentController.lancerDes() > PNJController.getAgi_pnj() + EvenementController.lancerDes()) {
+                return true;}
+        else {
+                return false;}
+    }
+
+
+
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
