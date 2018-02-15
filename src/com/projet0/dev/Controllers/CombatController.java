@@ -14,6 +14,23 @@ public class CombatController extends EvenementController implements ActionListe
 	 public void setQuiJoue(int aQuiJoue){
 	    quiJoue = aQuiJoue;
 	 }
+	 
+	 public boolean sortieCombat(int action) {
+			
+			if (PersonnageController.fuite() == true) {
+				action=1;
+			}
+			
+			if (getEtat() == 1) {
+				action=2;
+			}
+			
+			/*if (variable gagne changement tour == true){
+				action=3;
+			}*/
+			
+			
+		}
 
 	
 	static public int verificationEtat(PersonnageController perso){
