@@ -20,6 +20,13 @@ public class PersonnageController extends IndividuController implements ActionLi
         else {
                 return false;}
     }
+    
+    
+    static public int supprimerObjet(int key_objet) {
+    		key_objet = ObjetController.getId_objet();
+        mapInventaire.remove(key_objet);
+        }
+
 
 
 
