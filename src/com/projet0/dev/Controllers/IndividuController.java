@@ -7,7 +7,7 @@ public abstract class IndividuController implements ActionListener {
 	
 	int genre, age, poids, taille,constitution, force, agilite, perception, charisme, intelligence, etat;
 	String nom, prenom;
-	Image image;
+	Image image; //
 	
 	public int getGenre(){  
 	    return genre;
