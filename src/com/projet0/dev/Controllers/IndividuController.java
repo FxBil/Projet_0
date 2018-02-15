@@ -9,4 +9,32 @@ public abstract class IndividuController implements ActionListener {
 	String nom, prenom;
 	Image image;
 
+	
+	public int attaque(PersonnageController unPersonnage, PNJController unPnj, CombatController quiJoue) {
+		
+		if (quiJoue%2==0) {
+			
+			PersonnageController attaquant = unPersonnage;
+			PNJController défenseur = unPnj;
+			
+		}
+		else {
+			
+			PNJController attaquant = unPnj;
+			PersonnageController défenseur = unPersonnage;
+			
+		}
+		
+		int atk = (lancerDes()+(attaquant.force+attaquant.agi+attaquant.intelligence));
+		int def = (lancerDes()+(défenseur.force+défenseur.agi+défenseur.intelligence));
+		int dgt = atk-def;
+		
+		if (dgt<1) {
+			dgt=0;
+		}
+		
+		int constitu = défenseur.constitution-dgt;
+		return défenseur.constitution;
+
+	}
 }
