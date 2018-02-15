@@ -12,7 +12,29 @@ public class EvenementController implements ActionListener {
     Image image;
     HashMap<Integer, String> mapChoix = new HashMap<Integer, String>();
     
-    
+	public String getNom(){  
+	    return nom;
+	 }
+	
+	public Image getImage(){  
+	    return image;
+	 }
+	
+	public HashMap<Integer,String> getMapChoix(){  
+	    return mapChoix;
+	 }
+	
+	 public void setNom(String aNom){
+		 nom = aNom;
+	 }
+	 
+	 public void setImage(Image aImage){
+		 image = aImage;
+		 }
+	 
+	 public void setMapChoix(HashMap<Integer,String> aMapChoix){
+		    mapChoix = aMapChoix;
+		 }
     
     
     static public int lancerDes(){
