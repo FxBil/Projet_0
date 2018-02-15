@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class CombatController extends EvenementController implements ActionListener {
 	
-	int quiJoue;
+	static int quiJoue;
 	
 	public int getQuiJoue(){  
 	    return quiJoue;
@@ -13,6 +13,23 @@ public class CombatController extends EvenementController implements ActionListe
 	
 	 public void setQuiJoue(int aQuiJoue){
 	    quiJoue = aQuiJoue;
+	 }
+	 
+	 public void changementTour()
+	 {
+		 quiJoue = (quiJoue == 1) ? (quiJoue = 0):(quiJoue = 1);
+		 if(perso.constituion > 50)
+		 {
+			 etat = 1;
+		 }
+		 if(perso.constitution > 25)
+		 {
+			 etat = 2;
+		 }
+		 else
+		 {
+			 etat = 3;
+		 }
 	 }
 	 
 	 public boolean sortieCombat(int action) {
@@ -31,8 +48,7 @@ public class CombatController extends EvenementController implements ActionListe
 			
 			
 		}
-
-	
+	 	
 	static public int verificationEtat(PersonnageController perso){
         
         int etat = perso.getEtat();
