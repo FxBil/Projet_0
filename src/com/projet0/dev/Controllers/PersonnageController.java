@@ -15,7 +15,7 @@ public class PersonnageController extends IndividuController implements ActionLi
         id_perso = PersonnageController.getId_perso();
         id_pnj = PNJController.getId_png();
         
-        if (PersonnageController.getAgi_perso() + ObjetEvenemmentController.lancerDes() > PNJController.getAgi_pnj() + EvenementController.lancerDes()) {
+        if (PersonnageController.getAgi_perso() + EvenementController.lancerDes() > PNJController.getAgi_pnj() + EvenementController.lancerDes()) {
                 return true;}
         else {
                 return false;}
