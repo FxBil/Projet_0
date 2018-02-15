@@ -9,9 +9,9 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class GestionBDD {
-	 String bdurl = "chemin de la Base de Données"; 
-	 String bdlogin = "root";
-	 String bdpasswd = "";
+	 String bdurl = "projetovkxslam6.mysql.db"; 
+	 String bdlogin = "projetovkxslam6";
+	 String bdpasswd = "projet0Slam";
 
 	 Connection cn = null;
 	 Statement st = null;
@@ -23,16 +23,22 @@ public class GestionBDD {
 	          	cn = (Connection) DriverManager.getConnection(bdurl, bdlogin, bdpasswd);
 	   	} 
 		 catch (SQLException e) {
-	          	JOptionPane.showConfirmDialog(null, "Ouverture Impossible de la Base de Données (e)", "Le nom du Projet", JOptionPane.PLAIN_MESSAGE);
+	          	JOptionPane.showConfirmDialog(null, "Ouverture Impossible de la Base de Données (e)", "Projet_0", JOptionPane.PLAIN_MESSAGE);
 	          	e.printStackTrace();
 	          	System.exit(0);
 	   		} 
 		 catch (ClassNotFoundException f) {
-	   	   	JOptionPane.showConfirmDialog(null, "Ouverture Impossible de la Base de Données (f)",	"Le nom du projet", JOptionPane.PLAIN_MESSAGE);
+	   	   	JOptionPane.showConfirmDialog(null, "Ouverture Impossible de la Base de Données (f)",	"Projet_0", JOptionPane.PLAIN_MESSAGE);
 	          	f.printStackTrace();
 	          	System.exit(0);
 		 }
+		 return;
 	 }
-	 
+	 public Connection getcn(){
+			return cn;
+		}
+		public String getUrl(){
+			return bdurl;
+		}
 	 
 }
