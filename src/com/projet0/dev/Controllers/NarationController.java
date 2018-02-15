@@ -6,4 +6,12 @@ public class NarationController extends EvenementController implements ActionLis
 
 	String texte;
 
+	public String getTexte(){  
+	    return texte;
+	}
+	
+	 public void setTexte(String aTexte){
+	    texte = aTexte;
+	 }
+
 }
