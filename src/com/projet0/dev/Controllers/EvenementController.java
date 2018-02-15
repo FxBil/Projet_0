@@ -21,7 +21,7 @@ public class EvenementController implements ActionListener {
 	 }
 	
 	public HashMap<Integer,String> getMapChoix(){  
-	    return mapChoix;
+	    return mapChoix;//
 	 }
 	
 	 public void setNom(String aNom){
