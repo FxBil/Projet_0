@@ -20,11 +20,15 @@ public class PersonnageController extends IndividuController implements ActionLi
         else {
                 return false;}
     }
-    
+
+    static public int ajouterObjet(int key_objet) {
+		key_objet = ObjetController.getId_objet();
+		mapInventaire.add(key_objet);
+    }
     
     static public int supprimerObjet(int key_objet) {
     		key_objet = ObjetController.getId_objet();
-        mapInventaire.remove(key_objet);
+    		mapInventaire.remove(key_objet);
         }
     
     static public int utiliserObjet(int key_objet) {
