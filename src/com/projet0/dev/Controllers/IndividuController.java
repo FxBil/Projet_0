@@ -33,7 +33,7 @@ public abstract class IndividuController implements ActionListener {
 	    return force;
 	 }
 	
-	public int getAgilitee(){  
+	public int getAgilite(){  
 	    return agilite;
 	 }
 	
