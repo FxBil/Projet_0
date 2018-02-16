@@ -8,6 +8,7 @@ public class PersonnageController extends IndividuController implements ActionLi
 	
     HashMap<Integer, String> mapInventaire = new HashMap<Integer, String>();
     HashMap<Integer, String> mapStuff= new HashMap<Integer, String>();
+    int exp;
     ///test
     
     public HashMap<Integer,String> getMapChoix(){  
@@ -18,6 +19,11 @@ public class PersonnageController extends IndividuController implements ActionLi
 	    return mapStuff;
 	 }
     
+    public int getExp()
+    {
+    		return exp;
+    }
+    
     public void setMapChoix(HashMap<Integer,String> aMapInventaire){
 	    mapInventaire = aMapInventaire;
 	 }
@@ -25,6 +31,13 @@ public class PersonnageController extends IndividuController implements ActionLi
     public void setMapStuff(HashMap<Integer,String> aMapStuff){
 	    mapStuff = aMapStuff;
 	 }
+    
+    public void  setExp(int newXp)
+    {
+    		exp = newXp;
+    }
+
+    
     
     static public boolean fuite(int id_perso,int id_pnj) {
         id_perso = PersonnageController.getId_perso();
@@ -36,15 +49,7 @@ public class PersonnageController extends IndividuController implements ActionLi
                 return false;}
     }
 
-    public void  setExp(int newXp)
-    {
-    personnage.a = newXp;
-    }
-
-    public int getExp()
-    {
-    return personnage.a;
-    }
+   
 
     static public int ajouterObjet(int key_objet) {
 		key_objet = ObjetController.getId_objet();//caca
