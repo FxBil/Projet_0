@@ -37,7 +37,7 @@ public class PersonnageController extends IndividuController implements ActionLi
     }
 
     static public int ajouterObjet(int key_objet) {
-		key_objet = ObjetController.getId_objet();
+		key_objet = ObjetController.getId_objet();//caca
 		mapInventaire.add(key_objet);
     }
     
