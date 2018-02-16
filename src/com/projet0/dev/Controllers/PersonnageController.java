@@ -10,6 +10,21 @@ public class PersonnageController extends IndividuController implements ActionLi
     HashMap<Integer, String> mapStuff= new HashMap<Integer, String>();
     ///test
     
+    public HashMap<Integer,String> getMapChoix(){  
+	    return mapInventaire;
+	 }
+    
+    public HashMap<Integer,String> getMapStuff(){  
+	    return mapStuff;
+	 }
+    
+    public void setMapChoix(HashMap<Integer,String> aMapInventaire){
+	    mapInventaire = aMapInventaire;
+	 }
+    
+    public void setMapStuff(HashMap<Integer,String> aMapStuff){
+	    mapStuff = aMapStuff;
+	 }
     
     static public boolean fuite(int id_perso,int id_pnj) {
         id_perso = PersonnageController.getId_perso();
