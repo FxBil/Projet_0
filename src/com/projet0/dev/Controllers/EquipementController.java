@@ -33,6 +33,23 @@ public class EquipementController implements ActionListener {
 
         }
 
+	public ajouterObjet(keyObjetDestination, Objet objetAjoute)
+    {
+        if(objetAjout = true)
+        {
+	keyObjetDestination = objetAncien
+
+	estEquipé = 0
+	estEquipé = 1
+              
+        }
+        else 
+        {
+            System.out.println("Cet objet ne peut pas être équipé ici");//
+        }
+    }
+}
+
 
 
 	@Override

@@ -36,6 +36,16 @@ public class PersonnageController extends IndividuController implements ActionLi
                 return false;}
     }
 
+    public void  setExp(int newXp)
+    {
+    personnage.a = newXp;
+    }
+
+    public int getExp()
+    {
+    return personnage.a;
+    }
+
     static public int ajouterObjet(int key_objet) {
 		key_objet = ObjetController.getId_objet();//caca
 		mapInventaire.add(key_objet);
@@ -50,6 +60,18 @@ public class PersonnageController extends IndividuController implements ActionLi
   		key_objet = ObjetController.getId_objet();
       mapInventaire.remove(key_objet);
       }
+    
+    int personnage: :personnage [ ]  {
+    	String nom = tab[0];
+    	String prenom = tab[1];
+    	String genre = tab[2];
+    	personnage = new caract( )
+
+
+    	int id_race  = tab[5];
+    	objet inventaire [];
+    	objet equipement [];
+    	} 
 
 
 	
