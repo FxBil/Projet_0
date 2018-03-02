@@ -5,7 +5,8 @@ import java.awt.event.ActionListener;
 
 public class CombatController extends EvenementController implements ActionListener {
 	
-	static int quiJoue;
+	static int quiJoue = 1; 
+	boolean aGagne; 
 	
 	public int getQuiJoue(){  
 	    return quiJoue;
@@ -15,43 +16,52 @@ public class CombatController extends EvenementController implements ActionListe
 	    quiJoue = aQuiJoue;
 	 }
 	 
-	 public void changementTour()
+	 public void changementTour(int aQuiJoue, PersonnageController perso, PNJController pnj)//incrémenter
 	 {
-		 quiJoue = (quiJoue == 1) ? (quiJoue = 0):(quiJoue = 1);
-		 if(perso.constituion > 50)
+		 
+		 quiJoue ++;
+		 if(perso.constitution > 50)
 		 {
-			 etat = 1;
+			 perso.etat = 4;
 		 }
 		 if(perso.constitution > 25)
 		 {
-			 etat = 2;
+			 perso.etat = 3;
+		 }
+		 if(perso.constitution < 25 && perso.constitution > 0)
+		 {
+			 perso.etat = 2;
 		 }
 		 else
 		 {
-			 etat = 3;
+			 perso.etat = 1;
 		 }
+
 	 }
 	 
-	 public boolean sortieCombat(int action) {
+	 public int sortieCombat(int action,PersonnageController perso, PNJController pnj)
+	 {
 			
-			if (PersonnageController.fuite() == true) {
-				action=1;
+			if (perso.fuite(perso, pnj) == true) {
+				action=1;// a le droit
 			}
 			
-			if (getEtat() == 1) {
-				action=2;
+			if (perso.etat == 1) {
+				action=0;//Mort fin combat
+			}
+						
+			if(pnj.constitution <= 0)
+			{
+				 action = 2;//PNJ mort fin combat 
 			}
 			
-			/*if (variable gagne changement tour == true){
-				action=3;
-			}*/
-			
+			return action;
 			
 		}
 	 	
 	static public int verificationEtat(PersonnageController perso){
         
-        int etat = perso.getEtat();
+        int etat = perso.etat;
 
         switch (etat)
         {
@@ -59,10 +69,10 @@ public class CombatController extends EvenementController implements ActionListe
         System.out.println("mort");
         return etat;        
         case 2:
-        System.out.println("blessÃ© grave");
+        System.out.println("blessé grave");
         return etat;        
         case 3:
-        System.out.println("blessÃ©");
+        System.out.println("blessé");
         return etat;
         default:
         System.out.println("normal");
