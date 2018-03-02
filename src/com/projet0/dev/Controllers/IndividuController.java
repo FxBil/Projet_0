@@ -140,7 +140,7 @@ public abstract class IndividuController implements ActionListener {
 				dgt=0;
 			}
 			
-			int constitu = défenseur.constitution-dgt;
+			défenseur.constitution=défenseur.constitution-dgt;
 			return défenseur.constitution;
 		}
 		else {
@@ -157,7 +157,7 @@ public abstract class IndividuController implements ActionListener {
 				dgt=0;
 			}
 			
-			int constitu = défenseur.constitution-dgt;
+			défenseur.constitution=défenseur.constitution-dgt;
 			return défenseur.constitution;
 			
 		}
