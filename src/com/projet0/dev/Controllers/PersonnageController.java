@@ -39,7 +39,7 @@ public class PersonnageController extends IndividuController implements ActionLi
 
     
     
-    static public boolean fuite(PersonnageController perso,PNJController pnj) {
+    public boolean fuite(PersonnageController perso,PNJController pnj) {
         
         if (perso.getAgilite() + EvenementController.lancerDes() > pnj.getAgilite() + EvenementController.lancerDes()) {
                 return true;}
@@ -50,8 +50,8 @@ public class PersonnageController extends IndividuController implements ActionLi
    
 
     public int ajouterObjet(int key_objet) {
-		key_objet = ObjetController.getId_objet();//caca
-		mapInventaire.add(key_objet);
+		ObjetController obj = new ObjetController(key_objet);
+		mapInventaire.add(key_objet);//ajouter dans hashmap clé avec objet clé = keyobj valeur = obj
     }
     
     public int supprimerObjet(int key_objet) {

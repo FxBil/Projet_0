@@ -6,6 +6,11 @@ import java.awt.event.ActionListener;
 
 public class ObjetController implements ActionListener {
 	
+	ObjetController(id ObjetController)
+	{
+		
+	}
+	
 	String nom, description;
     int durabilite, valeur, type, temp, constitution, force, agilite, perception, charisme, intelligence, etat;
     Image image;
