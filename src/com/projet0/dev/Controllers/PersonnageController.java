@@ -6,16 +6,16 @@ import java.util.HashMap;
 
 public class PersonnageController extends IndividuController implements ActionListener {
 	
-    HashMap<Integer, String> mapInventaire = new HashMap<Integer, String>();
-    HashMap<Integer, String> mapStuff= new HashMap<Integer, String>();
+    HashMap<Integer, ObjetController> mapInventaire = new HashMap<Integer, ObjetController>();
+    HashMap<Integer, ObjetController> mapStuff= new HashMap<Integer,  ObjetController>();
     int exp;
     ///test
     
-    public HashMap<Integer,String> getMapChoix(){  
+    public HashMap<Integer, ObjetController> getMapChoix(){  
 	    return mapInventaire;
 	 }
     
-    public HashMap<Integer,String> getMapStuff(){  
+    public HashMap<Integer, ObjetController> getMapStuff(){  
 	    return mapStuff;
 	 }
     
@@ -24,11 +24,11 @@ public class PersonnageController extends IndividuController implements ActionLi
     		return exp;
     }
     
-    public void setMapChoix(HashMap<Integer,String> aMapInventaire){
+    public void setMapChoix(HashMap<Integer, ObjetController> aMapInventaire){
 	    mapInventaire = aMapInventaire;
 	 }
     
-    public void setMapStuff(HashMap<Integer,String> aMapStuff){
+    public void setMapStuff(HashMap<Integer, ObjetController> aMapStuff){
 	    mapStuff = aMapStuff;
 	 }
     
@@ -39,11 +39,9 @@ public class PersonnageController extends IndividuController implements ActionLi
 
     
     
-    static public boolean fuite(int id_perso,int id_pnj) {
-        id_perso = PersonnageController.getId_perso();
-        id_pnj = PNJController.getId_png();
+    static public boolean fuite(PersonnageController perso,PNJController pnj) {
         
-        if (PersonnageController.getAgi_perso() + EvenementController.lancerDes() > PNJController.getAgi_pnj() + EvenementController.lancerDes()) {
+        if (perso.getAgilite() + EvenementController.lancerDes() > pnj.getAgilite() + EvenementController.lancerDes()) {
                 return true;}
         else {
                 return false;}
@@ -51,17 +49,17 @@ public class PersonnageController extends IndividuController implements ActionLi
 
    
 
-    static public int ajouterObjet(int key_objet) {
+    public int ajouterObjet(int key_objet) {
 		key_objet = ObjetController.getId_objet();//caca
 		mapInventaire.add(key_objet);
     }
     
-    static public int supprimerObjet(int key_objet) {
+    public int supprimerObjet(int key_objet) {
     		key_objet = ObjetController.getId_objet();
     		mapInventaire.remove(key_objet);
         }
     
-    static public int utiliserObjet(int key_objet) {
+    public int utiliserObjet(int key_objet) {
   		key_objet = ObjetController.getId_objet();
       mapInventaire.remove(key_objet);
       }
