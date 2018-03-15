@@ -7,6 +7,8 @@ public class EquipementController implements ActionListener {
 	
 	boolean estEquipe;
 	
+	ObjetController armeG, armeD, gant, tete, corps, jambes, pieds, potion1, potion2, potion3, potion4, potion5;
+	
 	public boolean getEstEquipe(){  
 	    return estEquipe;
 	 }
@@ -15,42 +17,36 @@ public class EquipementController implements ActionListener {
 	    estEquipe = aEstEquipe;
 	 }
 
-	static public boolean verification(ObjetController objet){
-        boolean contain = false;
-        int type=set(objet.type);
-        int [] emplacement = ; // je ne sais pas avec quoi tester , a voir avec l'equipe
-         for(type=0;type<emplacement.length;type++)
-                {
-                    if(emplacement[type]==set(objet.type))
-                    {
-                        contain = true;
-                    }
-                }
-         if(contain)
-             {System.out.println("l’objet"+ objet.getType()+" peut être équipé");}
-         else
-             {System.out.println("l’objet"+objet.getType()+" peut pas être équipé");}
-
-        }
-
-	public ajouterObjet(keyObjetDestination, Objet objetAjoute)
-    {
-        if(objetAjout = true)
+	public void ajouterObjet(ObjetController objet, int emplacement)
+    {	
+        switch (emplacement)
         {
-	keyObjetDestination = objetAncien
-
-	estEquipé = 0
-	estEquipé = 1
-              
-        }
-        else 
-        {
-            System.out.println("Cet objet ne peut pas être équipé ici");//
+        case 0 : armeG = objet;
+        	break;
+        case 1: armeD = objet;
+        	break;
+        case 2: gant = objet;
+        	break;
+        case 3 : tete = objet;
+        	break;
+        case 4: corps = objet;
+        	break;
+        case 5: jambes = objet;
+        	break;
+        case 6 : pieds = objet;
+        	break;
+        case 7: potion1 = objet;
+        	break;
+        case 8: potion2 = objet;
+        	break;
+        case 9 : potion3 = objet;
+        	break;
+        case 10: potion4 = objet;
+        	break;
+        case 11: potion5 = objet;
+        	break;
         }
     }
-}
-
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

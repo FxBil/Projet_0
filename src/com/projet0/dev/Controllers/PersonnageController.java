@@ -7,18 +7,14 @@ import java.util.HashMap;
 public class PersonnageController extends IndividuController implements ActionListener {
 	
     HashMap<Integer, ObjetController> mapInventaire = new HashMap<Integer, ObjetController>();
-    HashMap<Integer, ObjetController> mapStuff= new HashMap<Integer,  ObjetController>();
+    EquipementController mapStuff = new EquipementController();
     int exp;
     ///test
     
     public HashMap<Integer, ObjetController> getMapChoix(){  
 	    return mapInventaire;
 	 }
-    
-    public HashMap<Integer, ObjetController> getMapStuff(){  
-	    return mapStuff;
-	 }
-    
+            
     public int getExp()
     {
     		return exp;
@@ -27,11 +23,7 @@ public class PersonnageController extends IndividuController implements ActionLi
     public void setMapChoix(HashMap<Integer, ObjetController> aMapInventaire){
 	    mapInventaire = aMapInventaire;
 	 }
-    
-    public void setMapStuff(HashMap<Integer, ObjetController> aMapStuff){
-	    mapStuff = aMapStuff;
-	 }
-    
+        
     public void  setExp(int newXp)
     {
     		exp = newXp;
