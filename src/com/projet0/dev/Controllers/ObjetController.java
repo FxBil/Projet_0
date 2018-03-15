@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class ObjetController implements ActionListener {
 	
-	ObjetController(id ObjetController)
+	ObjetController(int id)
 	{
 		
 	}

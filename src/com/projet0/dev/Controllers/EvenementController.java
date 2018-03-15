@@ -12,6 +12,12 @@ public class EvenementController implements ActionListener {
     Image image;
     HashMap<Integer, String> mapChoix = new HashMap<Integer, String>();
     
+    public EvenementController (int id) {
+    String[] data=EvenementModel.get(id);
+    nom = data ['nom'];
+    mapChoix.put(data.get(id));
+    }
+    
 	public String getNom(){  
 	    return nom;
 	 }
@@ -37,9 +43,9 @@ public class EvenementController implements ActionListener {
 		 }
     
     
-    static public int lancerDes(){
+    public static int lancerDes(IndividuController individu){
         int nbrand = 0;
-        int etat = IndividuController.getEtat();
+        int etat = individu.getEtat();
     
         if (etat == 3) {
             nbrand = (int) (Math.random() * 6 );  //Pour un entier entre 0 et 5

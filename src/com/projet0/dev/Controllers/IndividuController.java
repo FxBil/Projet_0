@@ -9,6 +9,10 @@ public abstract class IndividuController implements ActionListener {
 	String nom, prenom;
 	Image image; ///
 	
+	public IndividuController (int id) {
+		
+	}
+	
 	public int getGenre(){  
 	    return genre;
 	 }
@@ -129,10 +133,10 @@ public abstract class IndividuController implements ActionListener {
 		if (CombatController.quiJoue%2==0) {
 			
 			PersonnageController attaquant = unPersonnage;
-			PNJController défenseur = unPnj;
+			PNJController defenseur = unPnj;
 			
-			int atk = (EvenementController.lancerDes()+(attaquant.force+attaquant.agilite+attaquant.intelligence));
-			int def = (EvenementController.lancerDes()+(défenseur.force+défenseur.agilite+défenseur.intelligence));
+			int atk = (EvenementController.lancerDes(unPersonnage)+(attaquant.force+attaquant.agilite+attaquant.intelligence));
+			int def = (EvenementController.lancerDes(unPnj)+(defenseur.force+defenseur.agilite+defenseur.intelligence));
 			
 			int dgt = atk-def;
 			
@@ -140,16 +144,16 @@ public abstract class IndividuController implements ActionListener {
 				dgt=0;
 			}
 			
-			défenseur.constitution=défenseur.constitution-dgt;
-			return défenseur.constitution;
+			defenseur.constitution=defenseur.constitution-dgt;
+			return defenseur.constitution;
 		}
 		else {
 			
 			PNJController attaquant = unPnj;
-			PersonnageController défenseur = unPersonnage;
+			PersonnageController defenseur = unPersonnage;
 			
-			int atk = (EvenementController.lancerDes()+(attaquant.force+attaquant.agilite+attaquant.intelligence));
-			int def = (EvenementController.lancerDes()+(défenseur.force+défenseur.agilite+défenseur.intelligence));
+			int atk = (EvenementController.lancerDes(unPnj)+(attaquant.force+attaquant.agilite+attaquant.intelligence));
+			int def = (EvenementController.lancerDes(unPersonnage)+(defenseur.force+defenseur.agilite+defenseur.intelligence));
 			
 			int dgt = atk-def;
 			
@@ -157,8 +161,8 @@ public abstract class IndividuController implements ActionListener {
 				dgt=0;
 			}
 			
-			défenseur.constitution=défenseur.constitution-dgt;
-			return défenseur.constitution;
+			defenseur.constitution=defenseur.constitution-dgt;
+			return defenseur.constitution;
 			
 		}
 		

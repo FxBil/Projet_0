@@ -6,10 +6,16 @@ import java.util.HashMap;
 
 public class PersonnageController extends IndividuController implements ActionListener {
 	
-    HashMap<Integer, ObjetController> mapInventaire = new HashMap<Integer, ObjetController>();
+    public PersonnageController(int id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
+	HashMap<Integer, ObjetController> mapInventaire = new HashMap<Integer, ObjetController>();
     EquipementController mapStuff = new EquipementController();
     int exp;
     ///test
+    
     
     public HashMap<Integer, ObjetController> getMapChoix(){  
 	    return mapInventaire;
@@ -29,11 +35,10 @@ public class PersonnageController extends IndividuController implements ActionLi
     		exp = newXp;
     }
 
-    
-    
+       
     public boolean fuite(PersonnageController perso,PNJController pnj) {
         
-        if (perso.getAgilite() + EvenementController.lancerDes() > pnj.getAgilite() + EvenementController.lancerDes()) {
+        if (perso.getAgilite() + EvenementController.lancerDes(perso) > pnj.getAgilite() + EvenementController.lancerDes(pnj)) {
                 return true;}
         else {
                 return false;}
@@ -47,7 +52,7 @@ public class PersonnageController extends IndividuController implements ActionLi
     }
     
     public int supprimerObjet(int key_objet) {
-    		key_objet = ObjetController.getId_objet();
+    		key_objet = ObjetController.getId(id);
     		mapInventaire.remove(key_objet);
         }
     
